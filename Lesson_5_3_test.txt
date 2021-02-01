@@ -1,4 +1,0 @@
-Black:17
-Smith:21
-Potter:19
-Green:15
