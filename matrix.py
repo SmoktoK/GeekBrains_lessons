@@ -9,7 +9,7 @@ def main():
     print('Перавая рандомная матрица')
     output(matrix1)
     print()
-    print('Вторая рандоманя матрица')
+    print('Вторая рандоманая матрица')
     output(matrix2)
     print()
     print('Результат перемножения: ')
