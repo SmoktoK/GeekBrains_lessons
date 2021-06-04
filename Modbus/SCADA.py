@@ -13,7 +13,7 @@ c = ModbusClient()
 # # Определил хост сервера Modbus, порт
 c.host(SERVER_HOST)
 c.port(SERVER_PORT)
-
+start_time = time.time()
 with open("registr.txt", "w", encoding="utf8") as reg:
     reg.writelines(f"ip - {SERVER_HOST} регистры с {r} по {r + tot}: ")
 
@@ -33,6 +33,7 @@ while True:
             with open("registr.txt", "a", encoding="utf8") as reg:
                 reg.writelines(f"\n{str(regs)}")
             # Разкоментировать, если нужен только 1 опрос
-            # break
+            break
     # Задержка между опросами
-    time.sleep(1)
+    # time.sleep(1)
+print("--- %s seconds ---" % (time.time() - start_time))
