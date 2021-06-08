@@ -1,6 +1,5 @@
 from pyModbusTCP.client import ModbusClient
 import time
-import numpy as np
 
 SERVER_HOST = "192.168.24.5"
 SERVER_PORT = 502
