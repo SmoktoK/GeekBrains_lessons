@@ -1,7 +1,8 @@
 from pyModbusTCP.client import ModbusClient
 import time
+import numpy as np
 
-SERVER_HOST = "192.168.24.233"
+SERVER_HOST = "192.168.24.5"
 SERVER_PORT = 502
 r = int(input('Введите начальный регистр: '))
 tot = int(input('Введите количество регистров: '))
@@ -16,7 +17,6 @@ c.port(SERVER_PORT)
 start_time = time.time()
 with open("registr.txt", "w", encoding="utf8") as reg:
     reg.writelines(f"ip - {SERVER_HOST} регистры с {r} по {r + tot}: ")
-
 while True:
     # Открываем или переподключаемся к TCP
     if not c.is_open():
@@ -35,5 +35,6 @@ while True:
             # Разкоментировать, если нужен только 1 опрос
             break
     # Задержка между опросами
-    # time.sleep(1)
+    time.sleep(1)
 print("--- %s seconds ---" % (time.time() - start_time))
+
